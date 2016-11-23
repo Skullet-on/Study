@@ -23,7 +23,17 @@
         <li><%= link_to "Tests", tests_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">    
-        Login
+        <% if user_signed_in? %>
+          <li>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, :class => "button small-button green-button", :method => :delete do %><span class="glyphicon glyphicon-log-out"> Logout</span><% end %>
+          </li>   
+        <% else %>
+          <li>
+            <%= link_to "Login", new_user_session_path, :class => "glyphicon glyphicon-log-out" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

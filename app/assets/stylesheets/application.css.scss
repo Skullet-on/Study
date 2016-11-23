@@ -15,3 +15,8 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "devise_bootstrap_views";
+
+body {
+   background-color: #75adea;
+}

@@ -31,6 +31,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'sass-rails', '~>5.0'
 gem 'bootstrap-sass-extras'
+gem 'devise'
+gem 'devise-bootstrap-views'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
