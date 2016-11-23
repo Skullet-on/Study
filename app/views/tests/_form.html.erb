@@ -1,25 +1,20 @@
-<%= form_for(@test) do |f| %>
-  <% if @test.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@test.errors.count, "error") %> prohibited this test from being saved:</h2>
-
-      <ul>
-      <% @test.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :subject %><br>
-    <%= f.text_field :subject %>
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+    <h4>Test</h4>
   </div>
-  <div class="field">
-    <%= f.label :part %><br>
-    <%= f.number_field :part %>
+  <div class="panel-body">
+    <%= form_for(@test) do |f| %>
+      <div class="form-group">
+        <%= f.label :subject %><br>
+        <%= f.text_field :subject, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :part %><br>
+        <%= f.number_field :part, class: "form-control" %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

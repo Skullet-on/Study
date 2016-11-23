@@ -1,29 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Questions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Body</th>
-      <th>Test</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.body %></td>
-        <td><%= question.test %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+  <% @questions.each do |question| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= link_to "#{question.body}", question  %>
+        <%= link_to 'Edit', edit_question_path(question), class: 'btn btn-default btn-xs' %>
+        <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></div>
+      <div class="panel-body">
+        <% question.answers.each.with_index do |answer, index| %>
+          <%= index+1 %> <%= answer.body %><br>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 <br>
 
 <%= link_to 'New Question', new_question_path %>

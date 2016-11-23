@@ -1,27 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Tests</h1>
+<div class="btn-group-vertical" role="group" aria-label="...">
+<% @tests.each do |test| %>
+    <%= link_to "#{test.subject} #{test.part}", test, class: "btn btn-default" %>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Part</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tests.each do |test| %>
-      <tr>
-        <td><%= link_to "#{test.subject} #{test.part}", test %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
-        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Test', new_test_path %>
+<%= link_to 'New Test', new_test_path, class: "btn btn-default" %>
+</div>

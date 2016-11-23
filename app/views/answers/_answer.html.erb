@@ -1,2 +1,5 @@
 <%= answer.body %>
-<br>
+<%= link_to [answer.question, answer], class: "Delete", method: :delete do %>
+  Delete<br>
+<% end %>
+ 
