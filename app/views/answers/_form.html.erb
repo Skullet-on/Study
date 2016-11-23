@@ -1,0 +1,17 @@
+<%= form_for([@question, @question.answers.build]) do |f| %>
+  <div class="form-group">
+    <div class="col-md-12">
+      <%= f.label :Create_answer, class: 'control-label col-md-2' %>
+    </div>
+    <div class="col-md-6">
+      <%= f.text_field :body, class: 'text_field form-control' %>
+    </div>
+    <div class="col-md-4">
+      <%= f.label :correctly %><br>
+      <%= f.check_box :correctly %>
+    </div>
+    <div class='col-md-2'>
+      <%= f.submit nil, class: 'btn btn-custom' %>
+    </div>
+  </div>
+<% end %>

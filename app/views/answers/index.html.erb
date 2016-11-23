@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Answers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Correctly</th>
+      <th>Question</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @answers.each do |answer| %>
+      <tr>
+        <td><%= answer.body %></td>
+        <td><%= answer.correctly %></td>
+        <td><%= answer.question %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

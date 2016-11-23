@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @test.subject %>
+</p>
+
+<p>
+  <strong>Part:</strong>
+  <%= @test.part %>
+</p>
+
+
+  <% @test.questions.each do |q| %>
+    <%= q.body %>
+    <% q.answers.each do |a| %>
+      <br><%= a.body %>
+    <% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Add question', new_question_path %>
+<%= link_to 'Back', tests_path %>
