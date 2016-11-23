@@ -15,10 +15,12 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    authorize! :create, @question
   end
 
   # GET /questions/1/edit
   def edit
+    authorize! :edit, @question
   end
 
   # POST /questions
@@ -54,6 +56,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
+    authorize! :edit, @question
     @question.destroy
     respond_to do |format|
       format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }

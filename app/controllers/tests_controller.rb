@@ -15,10 +15,12 @@ class TestsController < ApplicationController
   # GET /tests/new
   def new
     @test = Test.new
+    authorize! :create, @test
   end
 
   # GET /tests/1/edit
   def edit
+    authorize! :edit, @test
   end
 
   # POST /tests
@@ -54,6 +56,7 @@ class TestsController < ApplicationController
   # DELETE /tests/1
   # DELETE /tests/1.json
   def destroy
+    authorize! :edit, @test
     @test.destroy
     respond_to do |format|
       format.html { redirect_to tests_url, notice: 'Test was successfully destroyed.' }

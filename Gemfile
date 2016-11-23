@@ -33,6 +33,7 @@ gem 'sass-rails', '~>5.0'
 gem 'bootstrap-sass-extras'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'cancan'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

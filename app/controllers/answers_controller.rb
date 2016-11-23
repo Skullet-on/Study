@@ -14,11 +14,12 @@ class AnswersController < ApplicationController
 
   # GET /answers/new
   def new
-    #@answer = Answer.new
+    authorize! :create, @answer
   end
 
   # GET /answers/1/edit
   def edit
+    authorize! :edit, @answer
   end
 
   # POST /answers
@@ -38,6 +39,7 @@ class AnswersController < ApplicationController
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy
+    authorize! :edit, @answers
     @question = Question.find(params[:question_id])
     @answer = @question.answers.find(params[:id])
     @answer.destroy
