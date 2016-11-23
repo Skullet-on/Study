@@ -1,0 +1,8 @@
+<h1>Listing Tests</h1>
+<div class="btn-group-vertical" role="group" aria-label="...">
+<% @tests.each do |test| %>
+    <%= link_to "#{test.subject} #{test.part}", test, class: "btn btn-default" %>
+<% end %>
+
+<%= link_to 'New Test', new_test_path, class: "btn btn-primary" %>
+</div>

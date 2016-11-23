@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><%= @question.body %></div>
+  <div class="panel-body">
+    <%= render @question.answers %>
+  </div>
+</div>
+<%= render "answers/form" %>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

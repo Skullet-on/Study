@@ -1,0 +1,17 @@
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+    <h4>Question</h4>
+  </div>
+  <div class="panel-body">
+    <%= form_for(@question) do |f| %>
+      <div class="field">
+        <%= f.label :body %><br>
+        <%= f.text_area :body, class: "form-control" %>
+      </div>
+      <%= f.select :test_id, Test.all.collect { |p| [ "#{p.subject} #{p.part}", p.id ] }, include_blank: false %>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
