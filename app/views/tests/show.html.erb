@@ -3,7 +3,7 @@
 <% @test.questions.each do |q| %>
   <div class="panel panel-default">
     <div class="panel-heading"><%= link_to q.body, q %>
-    <% if can? :destroy, @test %> 
+    <% if can? :destroy, q %> 
       <%= link_to t("destroy"), q, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
     </div>
