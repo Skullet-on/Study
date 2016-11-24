@@ -1,0 +1,7 @@
+<div class="container-fluid bg-1 text-center">
+  <h3>OLOLO</h3>
+  <%= form_for @question, :url => { :action => "upload"} do |f| %>
+    <%= f.file_field :file, :onchange => "validateFile(this);", :data => {:max_file_size => 30.megabytes}, accept: 'text/plain' %>
+    <%= f.submit %>
+  <% end %>
+</div>

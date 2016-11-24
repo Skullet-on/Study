@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
   resources :tests
   root 'welcome#index'
+  get '/file', to: 'welcome#file'
+  post '/upload', to: 'welcome#upload'
 
  
 end
