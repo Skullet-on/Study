@@ -1,7 +1,8 @@
 <%= answer.body %>
   <% if can? :destroy, answer %>
   <%= link_to [answer.question, answer], class: "Delete", method: :delete do %>
-    <%= t("destroy") %><br>
-  <% end %>  
+    <%= t("destroy") %>
+  <% end %>
 <% end %>
+<br>
  
