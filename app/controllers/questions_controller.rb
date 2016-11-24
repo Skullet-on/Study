@@ -58,6 +58,7 @@ class QuestionsController < ApplicationController
   def destroy
     authorize! :edit, @question
     @test = @question.test
+    @question.answers.destroy_all
     @question.destroy
     respond_to do |format|
       format.html { redirect_to test_path(@test), notice: 'Question was successfully destroyed.' }
