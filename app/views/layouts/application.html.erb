@@ -16,24 +16,33 @@
         <span class="icon-bar">2</span>
         <span class="icon-bar">3</span>
       </button>
-      <%= link_to "Home", root_path, class: "navbar-brand" %>
+      <%= link_to t("home"), root_path, class: "navbar-brand" %>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Tests", tests_path %></li>
+        <li><%= link_to t(".tests"), tests_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">    
         <% if user_signed_in? %>
           <li>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, :class => "button small-button green-button", :method => :delete do %><span class="glyphicon glyphicon-log-out"> Logout</span><% end %>
+            <%= link_to destroy_user_session_path, :class => "button small-button green-button", :method => :delete do %><span class="glyphicon glyphicon-log-out"> <%= t("logout") %></span><% end %>
           </li>   
         <% else %>
           <li>
-            <%= link_to "Login", new_user_session_path, :class => "glyphicon glyphicon-log-out" %>
+            <%= link_to t("login"), new_user_session_path, :class => "glyphicon glyphicon-log-out" %>
           </li>
         <% end %>
+          <% if I18n.locale == :ru %>
+          <li>
+            <%= link_to_unless_current t("english"), locale: "en" %>
+          </li>
+          <% else %>
+          <li>
+            <%= link_to_unless_current t("russian"), locale: "ru" %>
+          </li>
+          <% end %>
       </ul>
     </div>
   </div>

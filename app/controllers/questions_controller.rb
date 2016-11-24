@@ -57,9 +57,10 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1.json
   def destroy
     authorize! :edit, @question
+    @test = @question.test
     @question.destroy
     respond_to do |format|
-      format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
+      format.html { redirect_to test_path(@test), notice: 'Question was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -11,5 +11,13 @@ class ApplicationController < ActionController::Base
   rescue_from ActionController::RoutingError do |exception|
     redirect_to root_url, :alert => exception.message
   end
+
+  before_filter :set_locale
+
+  private
+
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
   
 end

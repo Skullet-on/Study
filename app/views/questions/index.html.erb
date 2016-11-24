@@ -1,17 +1,19 @@
-<h1>Listing Questions</h1>
-  <% @questions.each do |question| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <%= link_to "#{question.body}", question  %>
-        <%= link_to 'Edit', edit_question_path(question), class: 'btn btn-default btn-xs' %>
-        <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></div>
-      <div class="panel-body">
-        <% question.answers.each.with_index do |answer, index| %>
-          <%= index+1 %> <%= answer.body %><br>
-        <% end %>
-      </div>
+<% @questions.each do |question| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= link_to "#{question.body}", question  %>
+      <% if can? :destroy, question %>
+      <%= link_to t("edit"), edit_question_path(question), class: 'btn btn-default btn-xs' %>     
+        <%= link_to t("destroy"), question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+      <% end %>
     </div>
-  <% end %>
+    <div class="panel-body">
+      <% question.answers.each.with_index do |answer, index| %>
+        <%= index+1 %> <%= answer.body %><br>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to t("new"), new_question_path %>
