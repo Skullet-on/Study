@@ -3,7 +3,7 @@
     <h4><%= t(".question") %></h4>
   </div>
   <div class="panel-body">
-    <%= form_for(@question) do |f| %>
+    <%= form_for @question, :url => { :action => "upload"} do |f| %>
       <div class="field">
         <%= f.label :body %>
         <%= f.text_area :body, class: "form-control" %>
