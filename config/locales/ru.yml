@@ -1,0 +1,65 @@
+ru:
+  home: "Главная"
+  login: "Войти"
+  logout: "Выйти"
+  english: "Английский"
+  russian: "Русский"
+  back: "Назад"
+  add: "Создать"
+  edit: "Редактировать"
+  show: "Показать"
+  destroy: "Удалить"
+  new: "Новый"
+
+  layouts:
+    application:
+      tests: "Тесты"
+
+  welcome:
+    index: 
+      tests: "Тесты"
+
+  tests:
+    new:
+      new: "Создание предмета"
+
+  questions:
+    new:
+      new: "Создание вопроса"
+    form:
+      question: "Вопрос"
+
+
+  answers:
+    new:
+      new: "Создание ответа"
+    form:
+      answer: "Ответ"
+
+  activerecord:
+    models:
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      user: "Пользователь"
+    attributes:
+      test:
+        subject: "Предмет"
+        part: "Часть"
+      answer:
+        body: "Тело"
+        correctly: "Правильный?"
+      question:
+        body: "Тело"
+        test_id: "Предмет"
+      user:
+        email: "Эл. почта"
+        password: "Пароль"
+        admin: "Администратор"
+        remember_me: "Запомнить меня"
+
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Изменить %{model}"
+      delete: "Удалить %{model}"
