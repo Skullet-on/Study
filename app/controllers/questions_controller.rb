@@ -60,7 +60,7 @@ class QuestionsController < ApplicationController
     @test = @question.test
     @question.destroy
     respond_to do |format|
-      format.html { redirect_to tests_path(@test), notice: 'Question was successfully destroyed.' }
+      format.html { redirect_to test_path(@test), notice: 'Question was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

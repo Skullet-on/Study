@@ -1,14 +1,14 @@
 <h3><%= @test.subject %> <%= @test.part %></h3>
 
-<% @test.questions.each do |q| %>
+<% @test.questions.each do |question| %>
   <div class="panel panel-default">
-    <div class="panel-heading"><%= link_to q.body, q %>
-    <% if can? :destroy, q %> 
-      <%= link_to t("destroy"), q, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="panel-heading"><%= link_to question.body, question %>
+    <% if can? :destroy, question %> 
+      <%= link_to t("destroy"), question_path(question), method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
     </div>
     <div class="panel-body">
-      <% q.answers.each.with_index do |a, index| %>
+      <% question.answers.each.with_index do |a, index| %>
         <% if a.correctly? %>
           <p class="correct"><%= index+1 %> <%= a.body %></p>
         <% else %>
