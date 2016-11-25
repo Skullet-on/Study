@@ -35,7 +35,7 @@ class WelcomeController < ApplicationController
         end
       end
     end
-    #redirect_to tests_path(@test)
+    redirect_to tests_path(@test)
   end
 
 end
