@@ -11,12 +11,12 @@ class WelcomeController < ApplicationController
   def upload
     @file = params[:question][:file]
     f = File.read(@file.path)
-    @f = f.split("\nQ ")
+    @f = f.split("\nQ")
     @f.each_with_index do |ans, ind|
       if ind == 0
         @test = ans
       else
-        a = ans.split("\nA ")
+        a = ans.split("\nA")
         a.each_with_index do |aaa, index|
           if index == 0
             @question = Question.create(body: "#{aaa}")
